@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TTXTM55Q');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>G360 — 360° Marketing for Small Businesses</title>
@@ -189,6 +196,10 @@
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTXTM55Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -489,8 +500,7 @@
         <p class="foot-title">Contact</p>
         <ul>
           <li><a href="#contato">Talk to G360</a></li>
-          <li>contact@g360.com</li>
-          <li>(000) 000-0000</li>
+          <li>info@g360marketing.com</li>
         </ul>
       </div>
     </div>
@@ -507,7 +517,7 @@
   revealEls.forEach(el=>io.observe(el));
 
   // ---- SET HERE: destination email ----
-  const DESTINATARIO = "YOUR-EMAIL@domain.com"; // <-- replace with your real email
+  const DESTINATARIO = "info@g360marketing.com";
 
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
@@ -522,6 +532,12 @@
     window.location.href = `mailto:${DESTINATARIO}?subject=${assunto}&body=${corpo}`;
     status.style.display = 'block';
     status.textContent = 'Opening your email app to confirm submission...';
+
+    // Push a custom event to the dataLayer for Google Tag Manager.
+    // In GTM, create a Trigger of type "Custom Event" with event name "contact_form_submit",
+    // then attach your Google Ads conversion tag to that trigger.
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({'event': 'contact_form_submit'});
   });
 </script>
 
