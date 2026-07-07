@@ -457,11 +457,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <form id="contactForm">
       <div class="form-row">
-        <div class="field"><label for="nome">Name *</label><input type="text" id="nome" required placeholder="Your name" autocomplete="name"></div>
-        <div class="field"><label for="empresa">Company *</label><input type="text" id="empresa" required placeholder="Business name" autocomplete="organization"></div>
+        <div class="field"><label for="nome">Name *</label><input type="text" id="nome" name="name" required placeholder="Your name" autocomplete="name"></div>
+        <div class="field"><label for="empresa">Company *</label><input type="text" id="empresa" name="company" required placeholder="Business name" autocomplete="organization"></div>
       </div>
-      <div class="field"><label for="telefone">Phone *</label><input type="tel" id="telefone" required placeholder="(000) 000-0000" autocomplete="tel"></div>
-      <div class="field"><label for="mensagem">Tell us a bit about your business</label><textarea id="mensagem" placeholder="E.g.: I have a neighborhood shop and want to show up more on Google..."></textarea></div>
+      <div class="field"><label for="telefone">Phone *</label><input type="tel" id="telefone" name="phone" required placeholder="(000) 000-0000" autocomplete="tel"></div>
+      <div class="field"><label for="mensagem">Tell us a bit about your business</label><textarea id="mensagem" name="message" placeholder="E.g.: I have a neighborhood shop and want to show up more on Google..."></textarea></div>
       <button type="submit" class="btn btn-primary btn-block">Send and request diagnosis</button>
       <div class="form-status" id="formStatus"></div>
     </form>
@@ -516,28 +516,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12});
   revealEls.forEach(el=>io.observe(el));
 
-  // ---- SET HERE: destination email ----
-  const DESTINATARIO = "info@g360marketing.com";
+  // ---- Form endpoint (Formspree) ----
+  const FORM_ENDPOINT = "https://formspree.io/f/xrewvzvd";
 
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    const nome = document.getElementById('nome').value;
-    const empresa = document.getElementById('empresa').value;
-    const telefone = document.getElementById('telefone').value;
-    const mensagem = document.getElementById('mensagem').value;
-    const assunto = encodeURIComponent(`New website inquiry — ${empresa}`);
-    const corpo = encodeURIComponent(`Name: ${nome}\nCompany: ${empresa}\nPhone: ${telefone}\n\nMessage:\n${mensagem}`);
-    window.location.href = `mailto:${DESTINATARIO}?subject=${assunto}&body=${corpo}`;
-    status.style.display = 'block';
-    status.textContent = 'Opening your email app to confirm submission...';
 
-    // Push a custom event to the dataLayer for Google Tag Manager.
-    // In GTM, create a Trigger of type "Custom Event" with event name "contact_form_submit",
-    // then attach your Google Ads conversion tag to that trigger.
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({'event': 'contact_form_submit'});
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    status.style.display = 'block';
+    status.style.color = '';
+    status.textContent = 'Sending your message...';
+
+    fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        form.style.display = 'none';
+        status.textContent = "Thanks! We've received your message and will get back to you within 1 business day.";
+
+        // Push a custom event to the dataLayer for Google Tag Manager.
+        // In GTM, the Trigger "CE - Lead Form Submit" (Custom Event: contact_form_submit)
+        // fires the Google Ads conversion tag when this event is pushed.
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({'event': 'contact_form_submit'});
+      } else {
+        response.json().then(data => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send and request diagnosis';
+          status.style.color = '#B33710';
+          status.textContent = (data.errors && data.errors.length)
+            ? "Something went wrong: " + data.errors.map(err => err.message).join(", ")
+            : "Something went wrong. Please try again or email us directly.";
+        });
+      }
+    }).catch(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send and request diagnosis';
+      status.style.color = '#B33710';
+      status.textContent = "Something went wrong. Please check your connection and try again.";
+    });
   });
 </script>
 
