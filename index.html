@@ -27,8 +27,8 @@
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>G360 — Digital Marketing Agency for Small Businesses</title>
-<meta name="description" content="G360 is a digital marketing agency for small businesses: Google Ads, Meta Ads, website, SEO, and Google Business Profile in one place.">
+<title>G360 — Digital Marketing Agency in Toms River, NJ</title>
+<meta name="description" content="G360 is a digital marketing agency based in Toms River, NJ, serving small businesses across Ocean, Monmouth, and Middlesex County: Google Ads, Meta Ads, website, SEO, and Google Business Profile.">
 <style>
   :root{
     --bg: #FFFFFF;
@@ -123,6 +123,22 @@
   .growth-label{font-family:var(--mono);font-size:11px;fill:var(--ink-soft);text-anchor:middle;}
 
   /* ---------- Depoimentos ---------- */
+  /* ---------- Areas we serve (dynamic tabs) ---------- */
+  .areas-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
+  .area-tab{
+    font-family:var(--body);font-size:14.5px;font-weight:700;color:var(--ink);
+    background:#fff;border:1.5px solid var(--line);border-radius:8px;
+    padding:12px 22px;cursor:pointer;transition:border-color .15s, background .15s, color .15s;
+  }
+  .area-tab:hover{border-color:var(--blue);}
+  .area-tab.active{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .towns-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:900px;margin:0 auto;}
+  .town-pill{
+    background:#fff;border:1px solid var(--line);border-radius:8px;
+    padding:12px 10px;text-align:center;font-size:14px;color:var(--ink-soft);
+  }
+  .areas-note{font-size:14px;color:var(--ink-soft);margin-top:28px;text-align:center;}
+
   .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   .testimonial-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 24px;display:flex;flex-direction:column;gap:16px;}
   .testimonial-stars{color:var(--orange);font-size:15px;letter-spacing:2px;}
@@ -187,6 +203,7 @@
     .process{grid-template-columns:1fr 1fr;row-gap:28px;}
     .process::before{display:none;}
     .testimonials-grid{grid-template-columns:1fr;}
+    .towns-grid{grid-template-columns:repeat(2,1fr);}
     .chart-block, .contact-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr 1fr;}
     .online-banner{padding:36px 24px;}
@@ -227,6 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul>
         <li><a href="#servicos">Services</a></li>
         <li><a href="#processo">How it works</a></li>
+        <li><a href="#areas">Areas</a></li>
         <li><a href="#resultados">Results</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -243,9 +261,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="hero-text">
-    <div class="eyebrow">Digital Marketing Agency for Small Business</div>
+    <div class="eyebrow">Serving Ocean, Monmouth &amp; Middlesex County, NJ</div>
     <h1>Your business seen <em>from every angle</em>, not just on social media.</h1>
-    <p class="lede">Google Ads, Meta Ads, website, SEO, and Google presence — all handled together, with pricing built for small businesses that need real results, not a big agency.</p>
+    <p class="lede">Google Ads, Meta Ads, website, SEO, and Google presence — all handled together for small businesses across Ocean, Monmouth, and Middlesex County, with pricing built for a small business budget, not a big agency.</p>
     <div class="cta-row" style="justify-content:center;">
       <a href="#contato" class="btn btn-primary">Get my proposal</a>
     </div>
@@ -354,6 +372,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<section id="areas" class="reveal">
+  <div class="wrap">
+    <div class="section-head" style="margin:0 auto 36px;text-align:center;max-width:640px;">
+      <div class="eyebrow">Service Area</div>
+      <h2>Serving 30+ Towns Across Central New Jersey.</h2>
+      <p>Working face-to-face or online with small businesses across Ocean, Monmouth, and Middlesex County.</p>
+    </div>
+
+    <div class="areas-tabs" role="tablist" aria-label="Select a county">
+      <button class="area-tab active" data-county="ocean" role="tab" aria-selected="true">Ocean County</button>
+      <button class="area-tab" data-county="monmouth" role="tab" aria-selected="false">Monmouth County</button>
+      <button class="area-tab" data-county="middlesex" role="tab" aria-selected="false">Middlesex County</button>
+    </div>
+
+    <div class="towns-grid" id="townsGrid">
+      <div class="town-pill">Toms River</div>
+      <div class="town-pill">Brick</div>
+      <div class="town-pill">Lakewood</div>
+      <div class="town-pill">Jackson</div>
+      <div class="town-pill">Manchester</div>
+      <div class="town-pill">Berkeley</div>
+      <div class="town-pill">Point Pleasant</div>
+      <div class="town-pill">Seaside Heights</div>
+      <div class="town-pill">Barnegat</div>
+      <div class="town-pill">Lacey</div>
+    </div>
+
+    <p class="areas-note">Don't see your town listed? We likely still cover it — <a href="#contato" style="color:var(--blue-deep);font-weight:700;">just ask</a>.</p>
+  </div>
+</section>
+  </div>
+</section>
+
 <section id="depoimentos" class="section-tint reveal">
   <div class="wrap">
     <div class="section-head">
@@ -370,8 +421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="avatar-badge">JS</div>
           <div>
             <div class="testimonial-author-name">John Smith</div>
-            <div class="testimonial-author-role">Beauty salon</div>
-          </div>
+            </div>
         </div>
       </div>
 
@@ -382,20 +432,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="avatar-badge">SM</div>
           <div>
             <div class="testimonial-author-name">Sarah Miller</div>
-            <div class="testimonial-author-role">Neighborhood shop</div>
-          </div>
+            </div>
         </div>
       </div>
 
       <div class="testimonial-card">
         <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"The monthly report is easy to understand, no technical terms. I can actually see where the investment is going."</p>
+        <p class="testimonial-quote">"As a plumbing contractor, most of my jobs used to come from word of mouth. Now Google Ads brings in calls every week, and the monthly report actually makes sense to me."</p>
         <div class="testimonial-author">
           <div class="avatar-badge">MD</div>
           <div>
             <div class="testimonial-author-name">Mike Davis</div>
-            <div class="testimonial-author-role">Service provider</div>
-          </div>
+            </div>
         </div>
       </div>
 
@@ -428,7 +476,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <details class="faq-item">
         <summary>Do you work with any type of local business?</summary>
-        <p>We work mainly with small local businesses — shops, salons, clinics, service providers, and similar. In the free diagnosis, we assess whether your segment is a good fit for what we offer.</p>
+        <p>We work mainly with small businesses in Ocean, Monmouth, and Middlesex County, NJ — contractors (siding, roofing, plumbing, HVAC), shops, salons, clinics, service providers, and similar. In the free diagnosis, we assess whether your segment is a good fit for what we offer.</p>
       </details>
 
       <details class="faq-item">
@@ -448,11 +496,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="reveal">
   <div class="wrap">
     <div class="online-banner">
-      <div class="eyebrow">100% online</div>
-      <h2>No time to lose — the whole process happens online.</h2>
-      <p class="lead">No need to close your shop, drive across town, or clear your schedule. From the first conversation to the monthly report, everything is handled remotely — by call, message, or video. And since we're confident in the results, we don't lock you into a long contract to prove it.</p>
+      <div class="eyebrow">Online or in person — your choice</div>
+      <h2>No time to lose — the whole process can happen online.</h2>
+      <p class="lead">No need to close your shop, drive across town, or clear your schedule. From the first conversation to the monthly report, everything can be handled remotely — by call, message, or video. And if you're in Ocean, Monmouth, or Middlesex County, we're happy to meet in person too. Since we're confident in the results, we don't lock you into a long contract to prove it.</p>
       <div class="online-steps">
-        <div class="online-step"><div class="dot-check">✓</div>Diagnosis by call or video</div>
+        <div class="online-step"><div class="dot-check">✓</div>Diagnosis by call, video, or in person</div>
         <div class="online-step"><div class="dot-check">✓</div>Proposal and contract online</div>
         <div class="online-step"><div class="dot-check">✓</div>Campaigns managed remotely</div>
         <div class="online-step"><div class="dot-check">✓</div>Cancel anytime, no lock-in</div>
@@ -475,10 +523,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <form id="contactForm">
       <div class="form-row">
         <div class="field"><label for="nome">Name *</label><input type="text" id="nome" name="name" required placeholder="Your name" autocomplete="name"></div>
-        <div class="field"><label for="empresa">Company *</label><input type="text" id="empresa" name="company" required placeholder="Business name" autocomplete="organization"></div>
+        <div class="field"><label for="telefone">Phone *</label><input type="tel" id="telefone" name="phone" required placeholder="(000) 000-0000" autocomplete="tel"></div>
       </div>
-      <div class="field"><label for="telefone">Phone *</label><input type="tel" id="telefone" name="phone" required placeholder="(000) 000-0000" autocomplete="tel"></div>
-      <div class="field"><label for="mensagem">Tell us a bit about your business</label><textarea id="mensagem" name="message" placeholder="E.g.: I have a neighborhood shop and want to show up more on Google..."></textarea></div>
+      <div class="field"><label for="empresa">Company</label><input type="text" id="empresa" name="company" placeholder="Business name" autocomplete="organization"></div>
+      <div class="field"><label for="mensagem">Tell us a bit about your business</label><textarea id="mensagem" name="message" placeholder="E.g.: I run a siding and roofing company and want more leads from Google..."></textarea></div>
       <button type="submit" class="btn btn-primary btn-block">Send and request diagnosis</button>
     </form>
     <div class="form-status" id="formStatus"></div>
@@ -492,13 +540,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-grid">
       <div class="footer-col">
         <div class="logo" style="margin-bottom:12px;">G<span>360</span></div>
-        <p>Traffic management, website, SEO, and Google presence for small businesses that want to grow with predictability.</p>
+        <p>Digital marketing agency based in Toms River, NJ, serving small businesses across Ocean, Monmouth, and Middlesex County.</p>
       </div>
       <div class="footer-col">
         <p class="foot-title">Navigation</p>
         <ul>
           <li><a href="#servicos">Services</a></li>
           <li><a href="#processo">How it works</a></li>
+          <li><a href="#areas">Areas</a></li>
           <li><a href="#resultados">Results</a></li>
           <li><a href="#depoimentos">Testimonials</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -518,6 +567,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <ul>
           <li><a href="#contato">Talk to G360</a></li>
           <li>info@g360marketing.com</li>
+          <li>Toms River, NJ</li>
         </ul>
       </div>
     </div>
@@ -532,6 +582,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:.12});
   revealEls.forEach(el=>io.observe(el));
+
+  // ---- Areas We Serve: dynamic town list by county ----
+  const townsByCounty = {
+    ocean: ["Toms River","Brick","Lakewood","Jackson","Manchester","Berkeley","Point Pleasant","Seaside Heights","Barnegat","Lacey"],
+    monmouth: ["Freehold","Red Bank","Middletown","Long Branch","Marlboro","Asbury Park","Holmdel","Manalapan","Neptune","Wall Township"],
+    middlesex: ["Edison","Woodbridge","New Brunswick","Old Bridge","Sayreville","Perth Amboy","South Brunswick","Piscataway","Monroe Township","East Brunswick"]
+  };
+
+  const townsGrid = document.getElementById('townsGrid');
+  const areaTabs = document.querySelectorAll('.area-tab');
+
+  function renderTowns(county){
+    townsGrid.innerHTML = townsByCounty[county]
+      .map(town => `<div class="town-pill">${town}</div>`)
+      .join('');
+  }
+
+  areaTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      areaTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected','true');
+      renderTowns(tab.dataset.county);
+    });
+  });
+
+  renderTowns('ocean');
 
   // ---- Form endpoint (Formspree) ----
   const FORM_ENDPOINT = "https://formspree.io/f/xrewvzvd";
