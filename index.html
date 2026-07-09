@@ -139,15 +139,6 @@
   }
   .areas-note{font-size:14px;color:var(--ink-soft);margin-top:28px;text-align:center;}
 
-  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .testimonial-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 24px;display:flex;flex-direction:column;gap:16px;}
-  .testimonial-stars{color:var(--orange);font-size:15px;letter-spacing:2px;}
-  .testimonial-quote{font-size:14.5px;color:var(--ink);line-height:1.6;flex-grow:1;}
-  .testimonial-author{display:flex;align-items:center;gap:12px;}
-  .avatar-badge{width:40px;height:40px;border-radius:50%;background:var(--blue-soft);color:var(--blue-deep);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;}
-  .testimonial-author-name{font-size:14px;font-weight:700;}
-  .testimonial-author-role{font-size:12.5px;color:var(--ink-soft);}
-
   /* ---------- FAQ ---------- */
   /* ---------- Online process banner ---------- */
   .online-banner{background:var(--blue-deep);border-radius:16px;padding:48px 40px;text-align:center;color:#fff;}
@@ -172,6 +163,9 @@
   .contact-info p{color:var(--ink-soft);font-size:16px;margin-bottom:28px;}
   .contact-point{display:flex;gap:12px;align-items:flex-start;margin-bottom:18px;font-size:14.5px;}
   .contact-point .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);margin-top:7px;flex-shrink:0;}
+  .call-now-box{margin-top:40px;text-align:center;}
+  .or-divider{display:block;font-size:13px;color:var(--ink-soft);margin-bottom:14px;text-transform:uppercase;letter-spacing:.5px;}
+  .call-now-btn{font-size:18px;padding:17px 40px;}
   form{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px;}
   .field{margin-bottom:18px;}
   .field label{display:block;font-size:13px;font-weight:700;margin-bottom:7px;color:var(--ink-soft);}
@@ -202,7 +196,6 @@
     .services-grid{grid-template-columns:1fr 1fr;}
     .process{grid-template-columns:1fr 1fr;row-gap:28px;}
     .process::before{display:none;}
-    .testimonials-grid{grid-template-columns:1fr;}
     .towns-grid{grid-template-columns:repeat(2,1fr);}
     .chart-block, .contact-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr 1fr;}
@@ -228,6 +221,29 @@
   }
 </style>
 <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "G360 Marketing",
+  "description": "Digital marketing agency offering Google Ads, Meta Ads, website creation, SEO, Google Business Profile management, social media, and video creation for small businesses.",
+  "url": "https://g360marketing.com",
+  "telephone": "+1-848-238-6482",
+  "email": "info@g360marketing.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toms River",
+    "addressRegion": "NJ",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Ocean County, NJ" },
+    { "@type": "AdministrativeArea", "name": "Monmouth County, NJ" },
+    { "@type": "AdministrativeArea", "name": "Middlesex County, NJ" }
+  ],
+  "priceRange": "$$"
+}
+</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -417,48 +433,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section id="depoimentos" class="section-tint reveal">
+<section id="approach" class="section-tint reveal">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Testimonials</div>
-      <h2>What small businesses say about G360.</h2>
-      <p style="font-size:12.5px;opacity:.65;">Sample testimonials — replace with your real customer reviews once you have them.</p>
-    </div>
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"I didn't even know where to start with advertising before. G360 organized everything, and now my salon shows up so much more on Google."</p>
-        <div class="testimonial-author">
-          <div class="avatar-badge">JS</div>
-          <div>
-            <div class="testimonial-author-name">John Smith</div>
-            </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"The website was ready fast and already started bringing in inquiries through the form. Hands-on support, no runaround."</p>
-        <div class="testimonial-author">
-          <div class="avatar-badge">SM</div>
-          <div>
-            <div class="testimonial-author-name">Sarah Miller</div>
-            </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"As a plumbing contractor, most of my jobs used to come from word of mouth. Now Google Ads brings in calls every week, and the monthly report actually makes sense to me."</p>
-        <div class="testimonial-author">
-          <div class="avatar-badge">MD</div>
-          <div>
-            <div class="testimonial-author-name">Mike Davis</div>
-            </div>
-        </div>
-      </div>
-
+    <div class="section-head" style="margin:0 auto;text-align:center;max-width:680px;">
+      <div class="eyebrow">Our Approach</div>
+      <h2>We work with a select group of local businesses.</h2>
+      <p>That's on purpose — so you get our full attention, not a rotating account manager buried under fifty other clients. When you call, you talk to the person actually running your campaigns.</p>
     </div>
   </div>
 </section>
@@ -522,26 +502,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <section id="contato" class="section-tint reveal">
-  <div class="wrap contact-grid">
-    <div class="contact-info">
-      <div class="eyebrow">Let's talk</div>
-      <h2>Request a free diagnosis of your business.</h2>
-      <p>Fill out the form and we'll get back to you with an overview of what can be improved right away — no strings attached.</p>
-      <div class="contact-point"><div class="dot"></div>Response within 1 business day</div>
-      <div class="contact-point"><div class="dot"></div>Free diagnosis, no fine print</div>
-      <div class="contact-point"><div class="dot"></div>Proposal with clear pricing for small business</div>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow">Let's talk</div>
+        <h2>Request a free diagnosis of your business.</h2>
+        <p>Fill out the form and we'll get back to you with an overview of what can be improved right away — no strings attached.</p>
+        <div class="contact-point"><div class="dot"></div>Response within 1 business day</div>
+        <div class="contact-point"><div class="dot"></div>Free diagnosis, no fine print</div>
+        <div class="contact-point"><div class="dot"></div>Proposal with clear pricing for small business</div>
+      </div>
+
+      <div>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="field"><label for="nome">Name *</label><input type="text" id="nome" name="name" required placeholder="Your name" autocomplete="name"></div>
+            <div class="field"><label for="telefone">Phone *</label><input type="tel" id="telefone" name="phone" required placeholder="(000) 000-0000" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="empresa">Company</label><input type="text" id="empresa" name="company" placeholder="Business name" autocomplete="organization"></div>
+          <div class="field"><label for="mensagem">Tell us a bit about your business</label><textarea id="mensagem" name="message" placeholder="E.g.: I run a siding and roofing company and want more leads from Google..."></textarea></div>
+          <button type="submit" class="btn btn-primary btn-block">Send and request diagnosis</button>
+        </form>
+        <div class="form-status" id="formStatus"></div>
+      </div>
     </div>
 
-    <form id="contactForm">
-      <div class="form-row">
-        <div class="field"><label for="nome">Name *</label><input type="text" id="nome" name="name" required placeholder="Your name" autocomplete="name"></div>
-        <div class="field"><label for="telefone">Phone *</label><input type="tel" id="telefone" name="phone" required placeholder="(000) 000-0000" autocomplete="tel"></div>
-      </div>
-      <div class="field"><label for="empresa">Company</label><input type="text" id="empresa" name="company" placeholder="Business name" autocomplete="organization"></div>
-      <div class="field"><label for="mensagem">Tell us a bit about your business</label><textarea id="mensagem" name="message" placeholder="E.g.: I run a siding and roofing company and want more leads from Google..."></textarea></div>
-      <button type="submit" class="btn btn-primary btn-block">Send and request diagnosis</button>
-    </form>
-    <div class="form-status" id="formStatus"></div>
+    <div class="call-now-box">
+      <span class="or-divider">or</span>
+      <a href="tel:+18482386482" class="btn btn-primary call-now-btn">Call Now</a>
+    </div>
   </div>
 </section>
 
@@ -561,7 +550,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="#processo">How it works</a></li>
           <li><a href="#areas">Areas</a></li>
           <li><a href="#resultados">Results</a></li>
-          <li><a href="#depoimentos">Testimonials</a></li>
+          <li><a href="#approach">Our Approach</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contato">Contact</a></li>
         </ul>
@@ -577,7 +566,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="footer-col">
         <p class="foot-title">Contact</p>
         <ul>
-          <li><a href="#contato">Talk to G360</a></li>
+          <li><a href="tel:+18482386482">(848) 238-6482</a></li>
           <li>info@g360marketing.com</li>
           <li>Toms River, NJ</li>
         </ul>
